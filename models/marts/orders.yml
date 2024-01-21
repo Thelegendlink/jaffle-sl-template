@@ -50,10 +50,10 @@ models:
 semantic_models:
   - name: orders
     defaults:
-      agg_time_dimension: ordered_AT
+      agg_time_dimension: ordered_at
     description: |
-      Order fact table. This table is at the order grain with one row per order.    
-  
+      Order fact table. This table is at the order grain with one row per order.
+
     model: ref('stg_orders')
 
     entities:
@@ -62,13 +62,14 @@ semantic_models:
       - name: location
         type: foreign
         expr: location_id
-      - name: customer 
-        type: foreign 
+      - name: customer
+        type: foreign
         expr: customer_id
 
     dimensions:
       - name: ordered_at
         expr: date_trunc('day', ordered_at)
+        # use date_trunc(ordered_at, DAY) if using BigQuery
         type: time
         type_params:
           time_granularity: day
