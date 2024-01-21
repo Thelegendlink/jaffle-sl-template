@@ -1,7 +1,0 @@
-metrics:
-  - name: revenue
-    description: Sum of the order total.
-    label: Revenue
-    type: simple
-    type_params:
-      measure: order_total

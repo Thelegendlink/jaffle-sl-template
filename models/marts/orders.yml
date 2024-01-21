@@ -90,9 +90,9 @@ semantic_models:
         agg: sum
 
 metrics:
-  - name: revenue
+  - name: revenue_simple
     description: Sum of the order total.
-    label: Revenue
+    label: Revenue_Simple
     type: simple
     type_params:
       measure: order_total
