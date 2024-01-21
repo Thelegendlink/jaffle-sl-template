@@ -88,3 +88,11 @@ semantic_models:
       - name: tax_paid
         description: The total tax paid on each order.
         agg: sum
+
+metrics:
+  - name: revenue
+    description: Sum of the order total.
+    label: Revenue
+    type: simple
+    type_params:
+      measure: order_total
