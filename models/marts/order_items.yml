@@ -56,6 +56,11 @@ metrics:
     label: Food Revenue
     type: simple
     type_params:
-      measure: revenue
-    filter: |
-      {{ Dimension('order__is_food_order') }} = true      
+      measure: food_revenue
+  - name: food_revenue_pct
+    description: The % of order revenue from food.
+    label: Food Revenue %
+    type: ratio
+    type_params:
+      numerator: food_revenue
+      denominator: revenue
